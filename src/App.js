@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium, {StyleRoot} from 'radium';
+//import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
 
@@ -73,10 +73,10 @@ deletePersonHandler = (personIndex) => {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      // ':hover': {
+      //   backgroundColor: 'lightgreen',
+      //   color: 'black'
+      // }
 
     };
 
@@ -103,10 +103,10 @@ deletePersonHandler = (personIndex) => {
 
     style.backgroundColor = 'red';
 
-    style[':hover'] = {
-      backgroundColor: 'salmon',
-      color: 'black'
-    }
+    // style[':hover'] = {
+    //   backgroundColor: 'salmon',
+    //   color: 'black'
+    // }
 
     }
     
@@ -122,7 +122,7 @@ deletePersonHandler = (personIndex) => {
     }
 
     return (
-      <StyleRoot>
+      // <StyleRoot>
       <div className="App">
         <h1>I am react App</h1>
         <p className={classes.join(' ')}>This is awesome</p>
@@ -130,11 +130,11 @@ deletePersonHandler = (personIndex) => {
       
         {person}
       </div>
-      </StyleRoot>
+      // </StyleRoot>
     );
 
     // return React.createElement('div', {className : 'App'}, React.createElement('h1', 'null', 'I\'m react app'));
   }
 }
 
-export default Radium(App);
+export default App;
