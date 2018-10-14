@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "eth-token-recover": "^1.0.1",
+    "radium": "^0.25.0",
+    "random": "^2.0.12",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4"
