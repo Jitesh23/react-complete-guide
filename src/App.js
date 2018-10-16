@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 //import Radium, {StyleRoot} from 'radium';
 
@@ -66,21 +66,22 @@ deletePersonHandler = (personIndex) => {
 
   render() {
 
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      // ':hover': {
-      //   backgroundColor: 'lightgreen',
-      //   color: 'black'
-      // }
+    // const style = {
+    //   backgroundColor: 'green',
+    //   color: 'white',
+    //   font: 'inherit',
+    //   border: '1px solid blue',
+    //   padding: '8px',
+    //   cursor: 'pointer',
+    //   // ':hover': {
+    //   //   backgroundColor: 'lightgreen',
+    //   //   color: 'black'
+    //   // }
 
-    };
+    // };
 
     let person = null;
+    let btnClass = '';
 
     if (this.state.showPersons){
 
@@ -101,7 +102,9 @@ deletePersonHandler = (personIndex) => {
      </div>
     );
 
-    style.backgroundColor = 'red';
+    btnClass = classes.Red;
+
+    // style.backgroundColor = 'red';
 
     // style[':hover'] = {
     //   backgroundColor: 'salmon',
@@ -111,22 +114,22 @@ deletePersonHandler = (personIndex) => {
     }
     
 
-    let classes = [];
+    let assignedClasses = [];
 
     if (this.state.persons.length <=2) {
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
 
     if (this.state.persons.length <= 1){
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
 
     return (
       // <StyleRoot>
-      <div className="App">
+      <div className={classes.App}>
         <h1>I am react App</h1>
-        <p className={classes.join(' ')}>This is awesome</p>
-        <button style={style} onClick={this.togglePersonsHandler}>Toggle Name</button>
+        <p className={assignedClasses.join(' ')}>This is awesome</p>
+        <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Name</button>
       
         {person}
       </div>
